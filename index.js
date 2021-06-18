@@ -27,4 +27,14 @@ async function addUser() {
     });
 };
 
-addUser();
+async function getUsers() {
+    const realm = await Realm.open({
+        path: "users-lobby",
+        schema: [UserSchema],
+    });
+
+    const users = realm.objects("User");
+    console.log(`The lists of user are: ${users.map((user) => user.id)}`);
+}
+
+getUsers();
