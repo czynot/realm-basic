@@ -8,4 +8,4 @@ var userSchema = {
     primaryKey: "id",
 };
 
-exports.schema = userSchema;
+exports.userSchema = userSchema;

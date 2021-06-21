@@ -1,15 +1,20 @@
 const Realm = require('realm');
+const { getUsers } = require('./realmClient');
 
 const RealmClient = require('./realmClient');
 
-const user2 = {
-    id: 2,
+const user3 = {
+    id: 3,
     status: "Pending",            
     meta: "{ }",
 }
 
 const push = async() => {
-    await RealmClient.addUser(user2);
+    await RealmClient.addUser(user3);
 }
 
-push();
+const pull = async() => {
+    await RealmClient.getUsers();
+}
+
+pull();
